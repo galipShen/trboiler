@@ -5640,6 +5640,11 @@
   dependencies:
     "prop-types" "^15.8.1"
 
+"react-native-linear-gradient@^2.8.3":
+  "integrity" "sha512-KflAXZcEg54PXkLyflaSZQ3PJp4uC4whM7nT/Uot9m0e/qxFV3p6uor1983D1YOBJbJN7rrWdqIjq0T42jOJyA=="
+  "resolved" "https://registry.npmjs.org/react-native-linear-gradient/-/react-native-linear-gradient-2.8.3.tgz"
+  "version" "2.8.3"
+
 "react-native-progress-circle-gradient@^1.2.1":
   "integrity" "sha512-SVVSW5BJI19arewIUcor06f137iXQjef33p+tbaSXuoKn3OoRzdZnAvL7RNljWT9hDzz1pWviw4JzcXvgkvdnA=="
   "resolved" "https://registry.npmjs.org/react-native-progress-circle-gradient/-/react-native-progress-circle-gradient-1.2.1.tgz"

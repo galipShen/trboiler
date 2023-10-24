@@ -1,5 +1,5 @@
 import React from 'react';
-import {PixelRatio, StyleSheet} from 'react-native';
+import {PixelRatio, StyleSheet, Text} from 'react-native';
 import {Circle, Svg} from 'react-native-svg';
 import Animated, {
   withTiming,
@@ -20,12 +20,12 @@ interface AnimatedCircularProgressProps {
 }
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-
+// ['#FFC200', '#00CAFF']
 const AnimatedCircularProgress: React.FC<
   ReadOnlyProps<AnimatedCircularProgressProps>
 > = ({
   radius = 100,
-  color = '#ff457a',
+  color = '#00CAFF',
   borderWidth = 20,
   percentage = 0,
   duration = 500,
@@ -33,7 +33,7 @@ const AnimatedCircularProgress: React.FC<
   const loaderRadius = PixelRatio.roundToNearestPixel(radius);
   const innerCircleRadius = loaderRadius - borderWidth / 2;
 
-  const progress = useSharedValue(2 * Math.PI * innerCircleRadius); //  neden diğer circle ile dene
+  const progress = useSharedValue(2 * Math.PI * innerCircleRadius);
 
   const getCircumferenceData = React.useMemo(() => {
     const circumference = 2 * Math.PI * innerCircleRadius;
@@ -61,6 +61,7 @@ const AnimatedCircularProgress: React.FC<
 
   return (
     <Svg style={styles(radius).svg}>
+      <Text></Text>
       <AnimatedCircle
         cx={radius}
         cy={radius}
@@ -71,7 +72,7 @@ const AnimatedCircularProgress: React.FC<
         animatedProps={animatedStrokeDashOffset}
         strokeDasharray={getCircumferenceData.circumference}
         strokeDashoffset={getCircumferenceData.circumference}
-        strokeLinecap="round"
+        strokeLinecap="butt"
       />
     </Svg>
   );
